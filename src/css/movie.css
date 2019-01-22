@@ -1,0 +1,97 @@
+/* Extra small devices (phones) */
+@media only screen and (max-width: 600px) {
+    .movieImg {
+        height: 210px;
+        width: 140px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+        margin-top: 20px;
+        -webkit-filter: grayscale(40%);
+    }
+} 
+
+/* Small devices (large phones) */
+@media only screen and (min-width: 600px) {
+    .movieImg {
+        height: 330px;
+        width: 220px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+        margin-top: 20px;
+        -webkit-filter: grayscale(40%);
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .movieImg {
+        height: 225px;
+        width: 150px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+        margin-top: 20px;
+        -webkit-filter: grayscale(40%);
+    }
+}  
+
+
+/* Large devices (laptops/desktops) */
+@media only screen and (min-width: 992px) {
+    .movieImg {
+        height: 225px;
+        width: 150px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+        margin-top: 20px;
+        -webkit-filter: grayscale(40%);
+    }
+} 
+
+/* Extra Large devices (laptops/desktops) */
+
+@media only screen and (min-width: 1200px) {
+    .movieImg {
+        height: 270px;
+        width: 180px;
+        border-radius: 2px;
+        box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+        margin-top: 20px;
+        -webkit-filter: grayscale(40%);
+    }
+}
+
+.movieTitle{
+  color: rgb(255, 255, 255);
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.movieRating{
+  font-size: 0.8em;
+  font-weight: bold;
+  font-family: 'Ubuntu', sans-serif;
+  color: rgb(2, 2, 2);
+  position: absolute;
+  top: 20px;
+  padding: 7px;
+  background-color: rgb(192, 153, 47);
+  border-bottom-right-radius: 5px;
+  box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
+}
+
+.movieGenre{
+  font-size: .6em;
+  color: rgb(255, 255, 255);
+  font-size: 12px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.imgContainer {
+  position: relative;
+}
+
+.movieText {
+  overflow: hidden;
+  white-space: nowrap;
+  color: rgb(22, 22, 22);
+}

@@ -1,0 +1,80 @@
+.main-page{
+  background-color: #171e25;
+  box-shadow: 5px 10px;
+}
+
+.main{
+  -webkit-box-sizing: none;
+  box-sizing: none;
+}
+
+.pageTitle{
+  padding-top: 50px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 25px;
+  font-size: 1.7em;
+  color: white;
+  text-align: center;
+}
+
+.pageTitle{
+  padding-top: 50px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 25px;
+  font-size: 1.7em;
+  color: white;
+  text-align: center;
+}
+
+.logo-img{
+  height: 50px;
+  position: absolute;
+  z-index: 15;
+  top: 35px;
+  left: 10%;
+}
+
+.logo-img-full{
+  height: 40px;
+  position: absolute;
+  z-index: 16;
+  top: 45px;
+  right: 80px;
+}
+
+#footer{
+  margin-top: 5%;
+  height: 170px;
+  background: linear-gradient(to right, rgb(20, 9, 28), rgb(29, 26, 33));
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 25px;
+  color: rgb(142, 152, 167);
+}
+
+#footer a{
+  color: rgb(171, 167, 177);
+}
+
+#tmdbLogo{
+  position: inherit;
+  width: 126px;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.footer-text{
+  padding-top: 2%;
+}
+
+.recommender-title{
+  padding-top: 50px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  padding-bottom: 25px;
+  font-size: 1.2em;
+  color: white;
+  text-align: center;
+}

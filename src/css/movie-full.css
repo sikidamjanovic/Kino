@@ -1,0 +1,117 @@
+.movie-full-page{
+  width: 100%;
+  padding-top: 10%;
+  height: 700px;
+  background-color: black;
+}
+
+.movie-full-image{
+  position: absolute;
+  z-index: 5;
+  float: left;
+  padding: 0;
+  width: 350px;
+  left: 12%;
+  border-radius: 5px;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+  -webkit-animation: fadein 2s;
+}
+
+.movie-full-backdrop{
+ width: 100%;
+ filter:grayscale(80%) brightness(20%);
+ position: absolute;
+ top: 0;
+ z-index: 0;
+ -webkit-animation: fadein 1s;
+}
+
+@-webkit-keyframes fadein {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.movie-full-title{
+  padding-top: 10%;
+  padding-bottom: 2%;
+  font-size: 2.7em;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  font-weight: bold;
+  text-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+}
+
+.movie-full-overview{
+  color: rgb(230, 230, 230);
+  width: 90%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 110%;
+  margin-bottom: 10px;
+  text-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+}
+
+.movie-full-background{
+  position: relative;
+  width: 80%;
+  margin: auto;
+  height: 500px;
+  padding-left: 40%;
+  -webkit-animation: fadein 2s;
+}
+
+.movie-full-vote{
+  color: yellow;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+  float: right;
+  margin-right:64%;
+  margin-top:10px;
+  text-shadow: 0px 0px 100px rgba(0, 0, 0, 1);
+}
+
+.stars{
+  width: 120px;
+  margin: 0;
+  float: left;
+  text-shadow: 0px 0px 100px rgba(0, 0, 0, 1);
+}
+
+.movie-full-genres{
+  color: rgb(185, 185, 185);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.movie-full-runtime{
+  color: green;
+  font-size: 1em;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#netflix-img{
+  width: 20px;
+  height: 15px;
+  float: right;
+  margin-right: 50%;
+  margin-top: 37px;
+  border-radius: 50%;
+}
+
+#netflix-text{
+  float: right;
+  color: rgb(230, 230, 230);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  margin-top: 35px;
+  margin-right: 2%;
+}
+
+.recom-button{
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+  border: 1px solid #254452;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 30px;
+  float: left;;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
+}
