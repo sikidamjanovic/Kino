@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Movie from '../components/Movie'
-import { Grid, Row, Col, Clearfix, Alert } from 'react-bootstrap';
+import { Grid, Row, Col} from 'react-bootstrap';
 import '../css/main.css';
 import Search from '../components/Search'
 import tmdbLogo from'../img/tmdb.png'
@@ -26,20 +26,20 @@ class Home extends Component{
   }
 
   render() {
-
-    if (this.state.movie.length === 0) {
-     return (<div>Loading data...</div>)
-    }
-    
     var map = Array.from(Array(this.state.movie.length).keys())
-
     return(
       <div>
         <div className="main-page">
             <NavDrawer/>
-            <Search/>
-            <h1 className="pageTitle">Popular</h1>
             <Grid>
+                <Row>
+                    <Col md={10} sm={9} xs={5}>
+                        <h1 className="pageTitle">Popular</h1>    
+                    </Col>
+                    <Col md={2} sm={3} xs={7}>
+                        <Search/>
+                    </Col>
+                </Row>
                 <Row>
                     {map.map(i=>{
                         return <Col key={map.id} md={2} sm={3} xs={6}>

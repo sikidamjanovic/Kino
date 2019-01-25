@@ -1,9 +1,6 @@
 .search{
-  position: absolute;
-  right: 12%;
-  top: 50px;
+  margin-top: 50px;
   width: 200px;
-  z-index: 3;
 }
 
 .rec-search{
