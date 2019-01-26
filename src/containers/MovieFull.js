@@ -68,27 +68,40 @@ class MovieFull extends Component{
                         </Col>
                     </Row>
                     <Row>
-                        <Col sm={6} smOffset={0} xsOffset={2}>
+                        <Col sm={6} >
                             <div className="image-parent">
                                 <img className="movie-full-image"src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path}/>
                             </div>
                         </Col>
                         <Col sm={6}>
                             <div className="movie-info">
-                                <h1 className="movie-full-title">{this.state.movieData.title}</h1>
-                                <p className="movie-full-genres" style={{ color: palette.vibrant }} >{this.state.movieData.genres[0].name} | {this.state.movieData.runtime} Minutes | {this.state.movieData.release_date}</p>
-                                <p className="movie-full-overview">{this.state.movieData.overview}</p>
-                                <ReactStars
-                                    count={5}
-                                    value={rating}
-                                    size={24}
-                                    color1={palette.darkMuted}
-                                    color2={palette.vibrant}
-                                    className={'stars-full'}
-                                />
-                                <Link to= {{pathname: `/Recommender/${this.state.movieData.id}`}}>
-                                    <p style={{borderColor: palette.vibrant, color: palette.vibrant }} className="recom-button" onClick='reload()'>Recommendations</p>
-                                </Link>
+                                <Col>
+                                    <h1 className="movie-full-title">{this.state.movieData.title}</h1>
+                                    <p className="movie-full-genres" style={{ color: palette.vibrant }} >{this.state.movieData.genres[0].name} | {this.state.movieData.runtime} Minutes | {this.state.movieData.release_date}</p>
+                                    <p className="movie-full-overview">{this.state.movieData.overview}</p>
+                                </Col>
+                                
+                                <Col>
+                                    <div className="stars-container">
+                                        <ReactStars
+                                            count={5}
+                                            value={rating}
+                                            size={24}
+                                            color1={palette.darkMuted}
+                                            color2={palette.vibrant}
+                                            className={'stars-full'}
+                                        />
+                                        <p style={{ color: palette.vibrant }}className="rating">{rating * 2} / 10</p>
+                                    </div>
+                                    
+                                </Col>
+
+                                <Col>
+                                    <Link to= {{pathname: `/Recommender/${this.state.movieData.id}`}}>
+                                        <p style={{borderColor: palette.vibrant, color: palette.vibrant }} className="recom-button" onClick='reload()'>Recommendations</p>
+                                    </Link>
+                                </Col>
+
                             </div>
                         </Col>
                     </Row>

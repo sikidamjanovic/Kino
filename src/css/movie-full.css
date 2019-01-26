@@ -9,6 +9,9 @@
     .movie-info{
         margin-left: 10%;
     }
+    .image-parent{
+        text-align: center;
+    }
 } 
 
 /* Small devices (large phones) */
@@ -21,6 +24,9 @@
     }
     .movie-info{
         margin-left: 10%;
+    }
+    .image-parent{
+        text-align: center;
     }
 }
 
@@ -59,6 +65,7 @@
 
 .movie-full-page{
     background-color: rgb(0.5, 0.5, 0.5);
+    width: 100%;
 }
 
 .movie-full-image{    
@@ -71,16 +78,15 @@
 
 .movie-full-backdrop{
     height: 100vh;
-    background-size: cover;
-    background-repeat: no-repeat;
-    filter:grayscale(80%) brightness(10%);
+    width: 100%;
+    object-fit: cover;
+    filter:grayscale(80%) brightness(7%); 
     position: absolute;
     z-index: 0;
 }
 
 .movie-full-title{
-    padding-top: 5%;
-    padding-bottom: 2%;
+    margin-bottom: 5%;
     font-size: 2.7em;
     font-family: 'Lato', sans-serif;
     color: white;
@@ -93,7 +99,7 @@
     width: 90%;
     font-family: 'Open Sans', sans-serif;
     font-size: 110%;
-    margin-bottom: 10px;
+    margin-bottom: 5%;
     text-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
 }
 
@@ -103,14 +109,15 @@
     border: 1px solid #254452;
     border-radius: 10px;
     padding: 10px;
-    margin-top: 30px;
-    float: left;;
+    margin-bottom: 10%;
+    float: left;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
 }
 
 .movie-full-genres{
     color: rgb(185, 185, 185);
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 5%;
 }
   
 .movie-full-runtime{
@@ -121,5 +128,21 @@
 
 .logo-img-full{
     position: absolute;
+    top: 2%;
     right: 5%;
+}
+
+.rating{
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+.stars-container{
+    padding-left: 0 !important;
+    width: 120px;
+    margin: 0 !important;
+}
+
+.rating-container{
+    padding-left: 0 !important;
 }
