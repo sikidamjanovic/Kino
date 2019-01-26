@@ -4,14 +4,9 @@ import '../css/movie-full.css';
 import '../css/main.css';
 import {Grid, Row, Col, Clearfix} from 'react-bootstrap'
 import ReactStars from 'react-stars'
-import { render } from 'react-dom'
 import Search from '../components/Search'
-import Recommender from '../containers/Recommender'
-import myDataset from '../movie_titles.csv';
 import {Link} from 'react-router'
 import logo from '../img/kino3.png'
-import x from '../img/x.png'
-import check from '../img/check.png'
 import Palette from 'react-palette'
 import NavDrawer from '../components/NavDrawer'
 
@@ -58,37 +53,48 @@ class MovieFull extends Component{
     var title = (this.state.movieData.title)
 
     return (
-      <div className="movie-full-page">
-        <NavDrawer/>
-        <Search/>
+        <div className="movie-full-page">
+        <img className="movie-full-backdrop"src={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}/>
         <img className="logo-img-full" src={logo}/>
-        <img className="movie-full-image"src={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.poster_path}/>
         <Palette image={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}>
-          {palette => (
-            <div>    
-              <img className="movie-full-backdrop"src={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}/>
-              <div className="movie-full-background">
-                    <h1 className="movie-full-title">{this.state.movieData.title}</h1>
-                    <p className="movie-full-genres"  style={{ color: palette.vibrant }}>{this.state.movieData.genres[0].name} | {this.state.movieData.runtime} Minutes | {this.state.movieData.release_date}</p>
-                    <p className="movie-full-overview">{this.state.movieData.overview}</p>
-                    <ReactStars
-                      count={5}
-                      value={rating}
-                      size={24}
-                      color1={palette.darkMuted}
-                      color2={palette.vibrant}
-                      className={'stars'}
-                    />
-                    <p style={{ color: palette.vibrant }} className="movie-full-vote">{this.state.movieData.vote_average} /10</p>
-                    <Link to= {{pathname: `/Recommender/${this.state.movieData.id}`}}>
-                      <p style={{borderColor: palette.vibrant, color: palette.vibrant }}className="recom-button" onClick='reload()'>Recommendations</p>
-                    </Link>
-                    <img id="netflix-img"src={x}/>
-                    <div id="netflix-text">On Netflix</div>
-              </div>
-         </div>
-          )}
-         </Palette>
+            {palette => (
+                <Grid>
+                    <Row>
+                        <Col sm={6}>
+                            <NavDrawer/>
+                        </Col>
+                        <Col sm={6} smOffset={0} xsOffset={2}>
+                            <Search/>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col sm={6} smOffset={0} xsOffset={2}>
+                            <div className="image-parent">
+                                <img className="movie-full-image"src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path}/>
+                            </div>
+                        </Col>
+                        <Col sm={6}>
+                            <div className="movie-info">
+                                <h1 className="movie-full-title">{this.state.movieData.title}</h1>
+                                <p className="movie-full-genres" style={{ color: palette.vibrant }} >{this.state.movieData.genres[0].name} | {this.state.movieData.runtime} Minutes | {this.state.movieData.release_date}</p>
+                                <p className="movie-full-overview">{this.state.movieData.overview}</p>
+                                <ReactStars
+                                    count={5}
+                                    value={rating}
+                                    size={24}
+                                    color1={palette.darkMuted}
+                                    color2={palette.vibrant}
+                                    className={'stars-full'}
+                                />
+                                <Link to= {{pathname: `/Recommender/${this.state.movieData.id}`}}>
+                                    <p style={{borderColor: palette.vibrant, color: palette.vibrant }} className="recom-button" onClick='reload()'>Recommendations</p>
+                                </Link>
+                            </div>
+                        </Col>
+                    </Row>
+                </Grid>
+            )}
+        </Palette>
       </div>
     )
   }
