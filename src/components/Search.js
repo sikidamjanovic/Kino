@@ -1,12 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import {Link} from 'react-router'
-import MovieFull from '../containers/MovieFull'
 import '../css/search.css';
-import Divider from 'material-ui/Divider'
-
-const API_KEY = '17c21a1abd8ae7be6ee8986389011906'
-const API_URL = 'https://api.themoviedb.org/3/search/movie'
+import {Textfit} from 'react-textfit'
 
 class Search extends Component {
 
@@ -20,7 +16,7 @@ class Search extends Component {
    }
 
   getInfo = () => {
-    axios.get('https://api.themoviedb.org/3/search/movie?api_key=17c21a1abd8ae7be6ee8986389011906&query='+ this.state.query)
+    axios.get('https://api.themoviedb.org/3/search/movie?api_key=17c21a1abd8ae7be6ee8986389011906&total_results=1&query='+ this.state.query)
       .then(({data}) => {
         this.setState({
           searchData: data.results,
@@ -50,6 +46,11 @@ class Search extends Component {
           this.getInfo()
         }
       }
+      else if (this.state.query.length == 0){
+          this.setState({
+            searchData: ''
+          })
+      }
       else {
         this.setState({
           query: '',
@@ -75,14 +76,16 @@ class Search extends Component {
             onChange={this.handleInputChange}
           />
         </form>
-        <div className="searchResults">
-            {this.state.searchData.map(i=> (
-              <Link to={{
-                pathname: `/MovieFull/${i.id}`
-              }}>
-                <p onClick='reload()' className="search-link">{i.title} ({i.release_date})</p>
-              </Link>
-            ))}
+        <div className="tester">
+            <div className="searchResults">
+                {this.state.searchData.map(i=> (
+                <Link to={{pathname: `/MovieFull/${i.id}`}}>
+                    <Textfit mode="single" max={14}>
+                        <p onClick='reload()' className="search-link">{i.title} ({i.release_date})</p>
+                    </Textfit>
+                </Link>
+                ))}
+            </div>
         </div>
       </div>
     )

@@ -33,11 +33,11 @@ class Home extends Component{
             <NavDrawer/>
             <Grid>
                 <Row>
-                    <Col md={10} sm={9} xs={5}>
+                    <Col xs={12}>
                         <h1 className="pageTitle">Popular</h1>    
                     </Col>
-                    <Col md={2} sm={3} xs={7}>
-                        <Search/>
+                    <Col xs={12}>
+                        <div className="search-container"><Search/></div>
                     </Col>
                 </Row>
                 <Row>
@@ -48,14 +48,14 @@ class Home extends Component{
                     })}
                 </Row>
             </Grid>
-        <div>
-          <footer id="footer">
-              <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino">
-              kino@github.com</a>.</p>
-              <p>&copy; 2018 Sinisa Damjanovic</p>
-            <img src={tmdbLogo} id="tmdbLogo" alt="TMDBLogo"/>
-          </footer>
-        </div>
+            <div>
+                <footer id="footer">
+                    <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino">
+                    kino@github.com</a>.</p>
+                    <p>&copy; 2018 Sinisa Damjanovic</p>
+                    <img src={tmdbLogo} id="tmdbLogo" alt="TMDBLogo"/>
+                </footer>
+            </div>
         </div>
       </div>
     )

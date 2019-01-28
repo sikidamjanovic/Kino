@@ -55,16 +55,16 @@ class MovieFull extends Component{
     return (
         <div className="movie-full-page">
         <img className="movie-full-backdrop"src={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}/>
-        <img className="logo-img-full" src={logo}/>
+        <Link to= {{pathname: `/`}}>
+            <img className="logo-img-full" src={logo}/>
+        </Link>
+        <NavDrawer/>
         <Palette image={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}>
             {palette => (
                 <Grid>
                     <Row>
-                        <Col sm={6}>
-                            <NavDrawer/>
-                        </Col>
-                        <Col sm={6} smOffset={0} xsOffset={2}>
-                            <Search/>
+                        <Col sm={12}>
+                            <div className="search-container"><Search/></div>
                         </Col>
                     </Row>
                     <Row>

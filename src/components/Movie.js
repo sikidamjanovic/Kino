@@ -49,9 +49,9 @@ class Movie extends Component {
                                     <h4 className="movieTitle">{this.state.movieData.title}</h4>
                                 </div>
                             </Col>
-                            {/* Movie genres (primary and secondary) */}
+                            {/* Movie genre */}
                             <Col>
-                                <p className="movieGenre">{this.state.movieData.genres[0].name} - {this.state.movieData.genres[1].name}</p>
+                                <p className="movieGenre">{this.state.movieData.genres[0].name}</p>
                             </Col>
                             {/* React library for stars which uses the movies rating / 2 (since stars are out of 5 and rating is out of 10) */}    
                             <Col>
