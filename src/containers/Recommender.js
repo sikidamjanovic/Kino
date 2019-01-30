@@ -6,6 +6,9 @@ import Search from '../components/Search'
 import RecSearch from '../components/RecSearch'
 import tmdbLogo from'../img/tmdb.png'
 import NavDrawer from '../components/NavDrawer'
+import {Link} from 'react-router'
+import logo from '../img/kino3.png'
+import FadeIn from 'react-fade-in';
 
 class Recommender extends Component{
   
@@ -43,24 +46,29 @@ class Recommender extends Component{
     var map = Array.from(Array(this.state.movie.length).keys())
     return(
         <div className="main-page">
+            <Link to= {{pathname: `/`}}>
+                <img className="logo-img-full" src={logo}/>
+            </Link>
             <NavDrawer/>
+            <FadeIn>
             <Grid>
                 <Row>
-                    <Col xs={12}>
+                    <Col sm ={12} xs={6} smOffset={0} xsOffset={3}>
                         <h1 className="recommender-title">Recommendations for: <b>{this.state.title}</b></h1>    
                     </Col>
                     <Col xs={12}>
                         <div className="search-container"><Search/></div>
                     </Col>
                 </Row>
-                <Row>
+                <Row className="movie-row-container">
                     {map.map(i=>{
-                        return <Col key={map.id} md={2} sm={3} xs={6}>
+                        return <Col className="movie-container" key={map.id} md={2} sm={3} xs={6}>
                                     <Movie id={this.state.movie[i].id}></Movie>
                                </Col>
                     })}
                 </Row>                
             </Grid>
+            </FadeIn>
             <footer id="footer">
                 <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino">
                 kino@github.com</a>.</p>

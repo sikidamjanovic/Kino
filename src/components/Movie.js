@@ -35,14 +35,16 @@ class Movie extends Component {
         if (this.state.requestFailed) return <Loader type="line-scale" active />
         if (!this.state.movieData) return <Loader type="line-scale" active />
         return (
-            <div className="container">
+            <div>
                 <Link to={{ pathname: `/MovieFull/${this.props.id}`}}>
                     <Grid>
                         <Row>
                             {/* Movie poster image with container */}
                             <Col>
-                                <img className="movieImg" src={"https://image.tmdb.org/t/p/w200" + this.state.movieData.poster_path}/>
-                            </Col>
+                                <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path}/>
+                            </Col> 
+                        </Row>
+                        <Row>
                             {/* Movie title with overflow container to fit text within div */}
                             <Col>
                                 <div className="overflow-container">
@@ -51,7 +53,7 @@ class Movie extends Component {
                             </Col>
                             {/* Movie genre */}
                             <Col>
-                                <p className="movieGenre">{this.state.movieData.genres[0].name}</p>
+                                {/* <p className="movieGenre">{this.state.movieData.genres[0].name}</p> */}
                             </Col>
                             {/* React library for stars which uses the movies rating / 2 (since stars are out of 5 and rating is out of 10) */}    
                             <Col>

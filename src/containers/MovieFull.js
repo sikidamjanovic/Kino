@@ -9,6 +9,8 @@ import {Link} from 'react-router'
 import logo from '../img/kino3.png'
 import Palette from 'react-palette'
 import NavDrawer from '../components/NavDrawer'
+import FadeIn from 'react-fade-in'
+import tmdbLogo from'../img/tmdb.png'
 
 const ratingChanged = (newRating) => {
   console.log(newRating)
@@ -61,6 +63,7 @@ class MovieFull extends Component{
         <NavDrawer/>
         <Palette image={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}>
             {palette => (
+                <FadeIn>
                 <Grid>
                     <Row>
                         <Col sm={12}>
@@ -105,7 +108,17 @@ class MovieFull extends Component{
                             </div>
                         </Col>
                     </Row>
+                    <Row>
+                        <div>
+                            <footer id="footer">
+                                <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino">kino@github.com</a>.</p>
+                                <p>&copy; 2018 Sinisa Damjanovic</p>
+                                <img src={tmdbLogo} id="tmdbLogo" alt="TMDBLogo"/>
+                            </footer>
+                        </div>
+                    </Row>
                 </Grid>
+                </FadeIn>
             )}
         </Palette>
       </div>

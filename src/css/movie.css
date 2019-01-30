@@ -1,8 +1,8 @@
 /* Extra small devices (phones) */
 @media only screen and (max-width: 600px) {
     .movieImg {
-        height: 210px;
-        width: 140px;
+        width: 100%;
+        height: 250px;
         border-radius: 2px;
         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
         margin-top: 20px;
@@ -11,15 +11,16 @@
     .overflow-container{
         overflow: hidden;
         white-space: nowrap;
-        width: 140px;
+        width: 100%;
     }
 } 
 
 /* Small devices (large phones) */
 @media only screen and (min-width: 600px) {
     .movieImg {
-        height: 330px;
-        width: 220px;
+        width: 100%;
+        max-width: 300px;
+        height: 400px;
         border-radius: 2px;
         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
         margin-top: 20px;
@@ -28,14 +29,14 @@
     .overflow-container{
         overflow: hidden;
         white-space: nowrap;
-        width: 220px;
+        width: 100%;
     }
 }
 
 @media only screen and (min-width: 768px) {
     .movieImg {
-        height: 225px;
-        width: 150px;
+        width: 100%;
+        height: 300px;
         border-radius: 2px;
         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
         margin-top: 20px;
@@ -44,7 +45,7 @@
     .overflow-container{
         overflow: hidden;
         white-space: nowrap;
-        width: 150px;
+        width: 100%;
     }
 }  
 
@@ -52,8 +53,8 @@
 /* Large devices (laptops/desktops) */
 @media only screen and (min-width: 992px) {
     .movieImg {
-        height: 225px;
-        width: 150px;
+        width: 100%;
+        height: 260px;
         border-radius: 2px;
         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
         margin-top: 20px;
@@ -62,7 +63,7 @@
     .overflow-container{
         overflow: hidden;
         white-space: nowrap;
-        width: 150px;
+        width: 100%;
     }
 } 
 
@@ -70,8 +71,8 @@
 
 @media only screen and (min-width: 1200px) {
     .movieImg {
-        height: 270px;
-        width: 180px;
+        width: 100%;
+        height: 360px;
         border-radius: 2px;
         box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.40);
         margin-top: 20px;
@@ -80,7 +81,7 @@
     .overflow-container{
         overflow: hidden;
         white-space: nowrap;
-        width: 180px;
+        width: 100%;
     }
 }
 
