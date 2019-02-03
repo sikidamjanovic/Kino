@@ -2,12 +2,8 @@ import React from 'react'
 import {Route, IndexRoute} from 'react-router'
 import Template from '../containers/template'
 import Home from '../containers/Home'
-import Lists from '../containers/Lists'
-import Recommender from '../containers/Recommender'
 import MovieFull from '../containers/MovieFull'
-import Upcoming from '../containers/Upcoming'
-import TopRated from '../containers/TopRated'
-import NowPlaying from '../containers/NowPlaying'
+import Recommender from '../containers/Recommender'
 
 const createRoutes = () => {
   return(
@@ -24,8 +20,8 @@ const createRoutes = () => {
     />
 
     <Route
-      path={'Upcoming'}
-      component={Upcoming}
+      path='/MovieFull/:id'
+      component={MovieFull}
     />
 
     <Route
@@ -36,26 +32,6 @@ const createRoutes = () => {
     <Route
       path='/Recommender/:id'
       component={Recommender}
-    />
-
-    <Route
-      path={'TopRated'}
-      component={TopRated}
-    />
-
-    <Route
-      path={'Lists'}
-      component={Lists}
-    />
-
-    <Route
-      path={'Recommender'}
-      component={Recommender}
-    />
-
-    <Route
-      path={'NowPlaying'}
-      component={NowPlaying}
     />
 
     </Route>

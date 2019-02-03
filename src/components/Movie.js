@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/movie.css';
 import {Link} from 'react-router'
 import ReactStars from 'react-stars'
-import { Grid, Row, Col, Clearfix, Alert } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 var Loader = require('react-loaders').Loader;
 
 class Movie extends Component {
@@ -31,9 +31,16 @@ class Movie extends Component {
     }
 
     render() {
-        {/* Page needs to render something while data is loading, or else it renders a blank page*/}
         if (this.state.requestFailed) return <Loader type="line-scale" active />
         if (!this.state.movieData) return <Loader type="line-scale" active />
+
+        var genre = ''
+        if(this.state.movieData.genres.length > 0){
+            genre = this.state.movieData.genres[0].name
+        }else{
+            genre = "Unknown"
+        }
+
         return (
             <div>
                 <Link to={{ pathname: `/MovieFull/${this.props.id}`}}>
@@ -41,7 +48,7 @@ class Movie extends Component {
                         <Row>
                             {/* Movie poster image with container */}
                             <Col>
-                                <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path}/>
+                                <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path} alt="movie poster"/>
                             </Col> 
                         </Row>
                         <Row>
@@ -53,7 +60,7 @@ class Movie extends Component {
                             </Col>
                             {/* Movie genre */}
                             <Col>
-                                {/* <p className="movieGenre">{this.state.movieData.genres[0].name}</p> */}
+                                <p className="movieGenre">{genre}</p>
                             </Col>
                             {/* React library for stars which uses the movies rating / 2 (since stars are out of 5 and rating is out of 10) */}    
                             <Col>

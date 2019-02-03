@@ -1,10 +1,8 @@
 import React, {Component} from 'react'
 import Movie from '../components/Movie'
+import Footer from '../components/Footer'
 import { Grid, Row, Col} from 'react-bootstrap';
 import '../css/main.css';
-import Search from '../components/Search'
-import tmdbLogo from'../img/tmdb.png'
-import NavDrawer from '../components/NavDrawer'
 import {Link} from 'react-router'
 import logo from '../img/kino3.png'
 import FadeIn from 'react-fade-in';
@@ -63,21 +61,19 @@ class Home extends Component{
     }
 
     render() {
+        var map = []
         if(this.state.movie){
-            var map = Array.from(Array(this.state.movie.length).keys())
-        }else{
-            var map = []
+            map = Array.from(Array(this.state.movie.length).keys())
         }
         return(
             <div>
                 <div className="main-page">
                     <Link to= {{pathname: `/`}}>
-                        <img className="logo-img-full" src={logo}/>
+                        <img className="logo-img-full" src={logo} alt="kino logo"/>
                     </Link>
-                    <NavDrawer/>
                         <Grid>
                             <Row>
-                                <Col xs={12}>
+                                <Col xs={6} xsOffset={3}>
                                     <h1 className="pageTitle">Showing results for: {this.state.query}</h1>    
                                 </Col>
                                 <Col xs={12}>
@@ -88,12 +84,12 @@ class Home extends Component{
                                                 placeholder="Search movies..."
                                                 ref={input => this.search = input}
                                                 onChange={this.handleInputChange}
+                                                onKeyPress={e => { if (e.key === 'Enter') e.preventDefault(); }}
                                             />
                                         </form>
                                     </div>
                                 </Col>
                             </Row>
-                
                             <Row className="movie-row-container">
                                 <div className="loader-container">
                                     <Loader color="white" loaded={this.state.loaded}>
@@ -108,13 +104,7 @@ class Home extends Component{
                                 </div>
                             </Row>
                             <Row>
-                                <div>
-                                    <footer id="footer">
-                                        <p className="footer-text"> Repo: <a href="https://github.com/sikidamjanovic/Kino">kino@github.com</a>.</p>
-                                        <p>&copy; 2018 Sinisa Damjanovic</p>
-                                        <img src={tmdbLogo} id="tmdbLogo" alt="TMDBLogo"/>
-                                    </footer>
-                                </div>
+                                <Footer/>
                             </Row>
                         </Grid>
                 </div>
