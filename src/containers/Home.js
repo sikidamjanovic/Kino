@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import Movie from '../components/Movie'
 import Footer from '../components/Footer'
-import { Grid, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col, CardColumns, Card} from 'react-bootstrap';
 import '../css/main.css';
 import {Link} from 'react-router'
 import logo from '../img/kino3.png'
@@ -71,9 +71,9 @@ class Home extends Component{
                     <Link to= {{pathname: `/`}}>
                         <img className="logo-img-full" src={logo} alt="kino logo"/>
                     </Link>
-                        <Grid>
+                        <Container>
                             <Row>
-                                <Col xs={6} xsOffset={3}>
+                                <Col>
                                     <h1 className="pageTitle">Showing results for: {this.state.query}</h1>    
                                 </Col>
                                 <Col xs={12}>
@@ -90,23 +90,19 @@ class Home extends Component{
                                     </div>
                                 </Col>
                             </Row>
-                            <Row className="movie-row-container">
-                                <div className="loader-container">
-                                    <Loader color="white" loaded={this.state.loaded}>
-                                        {map.map(i=>{
-                                            return  <Col className="movie-container" key={map.id} md={2} sm={3} xs={6}>
-                                                        <FadeIn>
-                                                            <Movie id={this.state.movie[i].id}></Movie>
-                                                        </FadeIn>
-                                                    </Col>
-                                        })}
-                                    </Loader>
-                                </div>
-                            </Row>
-                            <Row>
-                                <Footer/>
-                            </Row>
-                        </Grid>
+                        </Container>
+                        <CardColumns>
+                            <Loader color="white" loaded={this.state.loaded}>
+                                {map.map(i=>{
+                                    return  <Card>
+                                                <FadeIn>
+                                                    <Movie id={this.state.movie[i].id}></Movie>
+                                                </FadeIn>
+                                            </Card>
+                                    })}
+                            </Loader>
+                        </CardColumns> 
+                        <Footer/> 
                 </div>
             </div>
         )

@@ -1,24 +1,39 @@
+/* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .pageTitle, .recommender-title{
-        font-size: 1.3em !important;
+        font-size: 1.2em !important;
+        margin: auto !important;
+        width: 60%;
     }
-    .movie-container{
-        padding: 1% !important;
+    .card-columns{
+        column-count: 2;
     }
-    
-    .movie-row-container{
-        padding: 5%;
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .card-columns{
+        column-count: 3;
     }
 } 
 
-.main-page{
-  background-color: #0b0e11;
-  box-shadow: 5px 10px;
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .card-columns{
+        column-count: 4 !important;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    .card-columns{
+        column-count: 5 !important;
+    }
 }
 
-.main{
-  -webkit-box-sizing: none;
-  box-sizing: none;
+.main-page{
+  background-color: #0b0e11;
+  min-height: 100vh;
 }
 
 .pageTitle{
@@ -75,23 +90,29 @@
   margin: 0;
   font-family: 'Raleway', sans-serif;
   font-size: 1.7em;
-  margin-bottom: 1%;
   color: white;
   text-align: center;
-}
-
-.movie-row-container{
-    padding: 3%;
 }
 
 .search-container{
     text-align: center;
 }
 
-.container{
-    width: 100% !important;
+.search{
+    margin: 0 !important;
+    padding: 3% 0 3% 0;
 }
 
-.loader-container{
-    height: 70vh;
+.container{
+    width: 100% !important;
+    border-radius: 5px;
+}
+
+.card{
+    background: none !important;
+}
+
+.card-columns{
+    padding: 2% 5% 2% 5%;
+    min-height: 60vh;
 }

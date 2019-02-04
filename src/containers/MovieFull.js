@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import '../css/movie-full.css';
 import '../css/main.css';
-import {Grid, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 import ReactStars from 'react-stars'
 import {Link} from 'react-router'
 import logo from '../img/kino3.png'
@@ -53,14 +53,14 @@ class MovieFull extends Component{
                 <Palette image={"https://image.tmdb.org/t/p/w1280" + this.state.movieData.backdrop_path}>
                     {palette => (
                         <FadeIn>
-                            <Grid>
-                                <Row>
-                                    <Col sm={6} >
+                            <Container className="vertical-align-container">
+                                <Row className="vertical-align-row">
+                                    <Col md={6} >
                                         <div className="image-parent">
                                             <img className="movie-full-image"src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path} alt="movie poster"/>
                                         </div>
                                     </Col>
-                                    <Col sm={6}>
+                                    <Col md={6}>
                                         <div className="movie-info">
                                             <Col>
                                                 <h1 className="movie-full-title">{this.state.movieData.title}</h1>
@@ -88,13 +88,11 @@ class MovieFull extends Component{
                                         </div>
                                     </Col>
                                 </Row>
-                                <Row>
-                                    <Footer/>
-                                </Row>
-                            </Grid>
+                            </Container>
                         </FadeIn>
                     )}
                 </Palette>
+                <Footer/>
             </div>
         )
     }

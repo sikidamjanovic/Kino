@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/movie.css';
 import {Link} from 'react-router'
 import ReactStars from 'react-stars'
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 var Loader = require('react-loaders').Loader;
 
 class Movie extends Component {
@@ -35,31 +35,35 @@ class Movie extends Component {
         if (!this.state.movieData) return <Loader type="line-scale" active />
 
         var genre = ''
+        var imgSrc = ''
+
         if(this.state.movieData.genres.length > 0){
             genre = this.state.movieData.genres[0].name
         }else{
             genre = "Unknown"
         }
 
+        if(this.state.movieData.poster_path){
+            imgSrc = <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path} alt="movie poster"/>
+        }
+
         return (
             <div>
                 <Link to={{ pathname: `/MovieFull/${this.props.id}`}}>
-                    <Grid>
+                    <Container className="movie-container">
                         <Row>
                             {/* Movie poster image with container */}
                             <Col>
-                                <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path} alt="movie poster"/>
+                                {imgSrc}
                             </Col> 
                         </Row>
                         <Row>
                             {/* Movie title with overflow container to fit text within div */}
-                            <Col>
-                                <div className="overflow-container">
-                                    <h4 className="movieTitle">{this.state.movieData.title}</h4>
-                                </div>
+                            <Col xs={12}>
+                                <h4 className="movieTitle">{this.state.movieData.title}</h4>
                             </Col>
                             {/* Movie genre */}
-                            <Col>
+                            <Col xs={12}>
                                 <p className="movieGenre">{genre}</p>
                             </Col>
                             {/* React library for stars which uses the movies rating / 2 (since stars are out of 5 and rating is out of 10) */}    
@@ -73,7 +77,7 @@ class Movie extends Component {
                                 <p className="movieRating">{this.state.movieData.vote_average} / 10 </p>
                             </Col>
                         </Row>
-                    </Grid>
+                    </Container>
                 </Link>
             </div>
         )

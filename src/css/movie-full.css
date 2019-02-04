@@ -1,5 +1,5 @@
 /* Extra small devices (phones) */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 450px) {
     .movie-full-image{
         width: 200px;
         margin-top: 20%;
@@ -11,7 +11,7 @@
     }
     .stars-container{
         margin: auto !important;
-        width: 120px !important;
+        width: 110px !important;
     }
     .movie-info{
         text-align: center;
@@ -22,12 +22,20 @@
 } 
 
 /* Small devices (large phones) */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 450px) {
     .movie-full-image{
-        width: 300px;
-        margin-top: 10%;
+        width: 70%;
     }
     .recom-button{
+        width: 150px;
+        float: none !important;
+        margin: auto;
+    }
+    .stars-container{
+        margin: auto !important;
+        width: 110px !important;
+    }
+    .movie-info{
         text-align: center;
     }
     .image-parent{
@@ -37,36 +45,14 @@
 
 @media only screen and (min-width: 768px) {
     .movie-full-image{
-        width: 350px;
-    }
-    .movie-info{
-        margin-top: 25%;
+        width: 100%;
+        
     }
 }  
 
-
-/* Large devices (laptops/desktops) */
-@media only screen and (min-width: 992px) {
-    .movie-full-image{
-        width: 450px;
-    }
-    .movie-info{
-        margin-top: 25%;
-    }
-} 
-
-/* Extra Large devices (laptops/desktops) */
-@media only screen and (min-width: 1200px) {
-    .movie-full-image{
-        width: 500px;
-    }
-    .movie-info{
-        margin-top: 25%;
-    }
-}
-
 .movie-full-page{
     background-color: rgb(0.5, 0.5, 0.5);
+    min-height: 100%;
     width: 100%;
 }
 
@@ -78,10 +64,10 @@
 }
 
 .movie-full-backdrop{
-    height: 100%;
     width: 100%;
+    height: 100%;
     object-fit: cover;
-    filter:grayscale(80%) brightness(10%); 
+    filter:grayscale(80%) brightness(7%) blur(5px);
     position: absolute;
     z-index: 0;
 }
@@ -97,7 +83,6 @@
   
 .movie-full-overview{
     color: rgb(230, 230, 230);
-    width: 90%;
     font-family: 'Open Sans', sans-serif;
     font-size: 110%;
     margin-bottom: 3%;
@@ -140,10 +125,16 @@
 
 .stars-container{
     padding-left: 0 !important;
-    width: 120px;
+    width: 125px;
     margin: 0;
 }
 
 .rating-container{
     padding-left: 0 !important;
+}
+
+.vertical-align-row{
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
 }

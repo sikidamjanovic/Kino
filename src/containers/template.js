@@ -1,6 +1,5 @@
 import React, {Component} from 'react'
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
-import '../index.css';
 import '../css/main.css'
 
 class Template extends Component{
