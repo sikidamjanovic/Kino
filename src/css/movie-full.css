@@ -29,7 +29,6 @@
 @media only screen and (min-width: 450px) {
     .movie-full-image{
         width: 80%;
-        margin-top: 10%;
         padding: 5%;
     }
     .recom-button{
