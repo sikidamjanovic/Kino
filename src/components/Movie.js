@@ -24,9 +24,13 @@ class Movie extends Component {
             })
             .then(d => d.json())
             .then(d => {
-                this.setState({ movieData: d })
+                this.setState({
+                    movieData: d
+                })
             }, () => {
-                this.setState({ requestFailed: true })
+                this.setState({
+                    requestFailed: true
+                })
             })
     }
 
@@ -34,44 +38,45 @@ class Movie extends Component {
         if (this.state.requestFailed) return <Loader type="line-scale" active />
         if (!this.state.movieData) return <Loader type="line-scale" active />
 
-        var genre = ''
         var imgSrc = ''
+        let genres = this.state.movieData.genres
+        let posterPath = this.state.movieData.poster_path
 
-        if(this.state.movieData.genres.length > 0){
-            genre = this.state.movieData.genres[0].name
+        if(genres.length > 0){
+            var genre = genres[0].name
+            for (let i = 1; i < genres.length - 1; i++) {
+                genre += " / "+ genres[i].name
+            }
         }else{
             genre = "Unknown"
         }
 
-        if(this.state.movieData.poster_path){
-            imgSrc = <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + this.state.movieData.poster_path} alt="movie poster"/>
+        if(posterPath){
+            imgSrc = <img className="movieImg" src={"https://image.tmdb.org/t/p/w500" + posterPath} alt="movie poster"/>
         }
 
         return (
-            <div>
+            <div className="hvr-grow">
                 <Link to={{ pathname: `/MovieFull/${this.props.id}`}}>
                     <Container className="movie-container">
                         <Row>
-                            {/* Movie poster image with container */}
                             <Col>
                                 {imgSrc}
                             </Col> 
                         </Row>
                         <Row>
-                            {/* Movie title with overflow container to fit text within div */}
                             <Col xs={12}>
-                                <h4 className="movieTitle">{this.state.movieData.title}</h4>
+                                <h4 className="movieTitle">{this.state.movieData.title} ({this.state.movieData.release_date.substring(0, 4)})</h4>
                             </Col>
-                            {/* Movie genre */}
                             <Col xs={12}>
                                 <p className="movieGenre">{genre}</p>
-                            </Col>
-                            {/* React library for stars which uses the movies rating / 2 (since stars are out of 5 and rating is out of 10) */}    
+                            </Col> 
                             <Col>
                                 <ReactStars
                                     count={5}
                                     value={this.state.movieData.vote_average / 2}
-                                    size={10}
+                                    color1={'#7c6b33'}
+                                    color2={'#ccaa3c'}
                                     className={'stars'}
                                 />
                                 <p className="movieRating">{this.state.movieData.vote_average} / 10 </p>

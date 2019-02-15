@@ -1,8 +1,12 @@
 /* Extra small devices (phones) */
 @media only screen and (max-width: 450px) {
-    .movie-full-image{
-        width: 200px;
-        margin-top: 20%;
+    .movie-full-image{ 
+        width: 90%;
+        margin-top: 10%;
+        padding: 5%;
+    }
+    .movie-full-backdrop{
+        filter:grayscale(80%) brightness(0%) blur(1px) !important;
     }
     .recom-button{
         width: 150px;
@@ -24,7 +28,9 @@
 /* Small devices (large phones) */
 @media only screen and (min-width: 450px) {
     .movie-full-image{
-        width: 70%;
+        width: 80%;
+        margin-top: 10%;
+        padding: 5%;
     }
     .recom-button{
         width: 150px;
@@ -45,29 +51,37 @@
 
 @media only screen and (min-width: 768px) {
     .movie-full-image{
-        width: 100%;
-        
+        width: 90%;
     }
 }  
 
 .movie-full-page{
-    background-color: rgb(0.5, 0.5, 0.5);
-    min-height: 100%;
-    width: 100%;
+    background-color: #000000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.vertical-align-info{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .movie-full-image{    
-    border-radius: 5px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 1);
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.466);
     -webkit-animation: fadein 2s;
-    margin-bottom: 3%;
 }
 
 .movie-full-backdrop{
+    top: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter:grayscale(80%) brightness(7%) blur(5px);
+    filter:grayscale(80%) brightness(8%) blur(1px);
     position: absolute;
     z-index: 0;
 }
@@ -91,10 +105,10 @@
 
 .recom-button{
     font-family: 'Open Sans', sans-serif;
-    color:white;
     border: 1px solid #254452;
     border-radius: 10px;
-    padding: 10px;
+    padding: 3%;
+    font-size: 0.9em;
     margin-bottom: 10%;
     float: left;
     box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.6);
@@ -115,7 +129,9 @@
 .logo-img-full{
     position: absolute;
     top: 2%;
-    right: 5%;
+    right: 2%;
+    width: 70px;
+    height: auto;
 }
 
 .rating{
@@ -131,10 +147,4 @@
 
 .rating-container{
     padding-left: 0 !important;
-}
-
-.vertical-align-row{
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
 }

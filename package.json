@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.2.1",
+    "hover.css": "^2.3.2",
     "loaders.css": "^0.1.2",
     "material-ui": "^0.20.2",
     "react": "^16.7.0",

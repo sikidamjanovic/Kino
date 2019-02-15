@@ -39,34 +39,35 @@ class Recommender extends Component{
     }
 
     render() {
-        var map = Array.from(Array(this.state.movie.length).keys())
-        return(
-            <div className="main-page">
-                <Link to= {{pathname: `/`}}> <img className="logo-img-full" src={logo} alt="kino logo"/></Link>
-                <FadeIn>
-                    <Container>
-                        <Row>
-                            <Col>
-                                <h1 className="recommender-title">Recommendations for: <b>{this.state.title}</b></h1>    
-                            </Col>
-                        </Row>             
-                    </Container>
-                    <CardColumns>
-                        <Loader loaded={this.state.loaded}>
-                            {map.map(i=>{
-                                return  <Card>
-                                            <FadeIn>
-                                                <Movie id={this.state.movie[i].id}></Movie>
-                                            </FadeIn>
-                                        </Card>
-                            })}
-                        </Loader>
-                    </CardColumns> 
-                </FadeIn>
-                <Footer/>
+        var map = []
+        if(this.state.movie){
+            map = Array.from(Array(this.state.movie.length).keys())
+        }
+        return (
+            <div>
+                <Link to={{ pathname: `/` }}> <img className="logo-img-full" src={logo} alt="kino logo"/></Link>
+                <div className="header">
+                    <p className="title">Recommendations for: <b>{this.state.title}</b></p>
+                </div>
+                <div className="body">
+                    <FadeIn>
+                        <CardColumns>
+                            <Loader loaded={this.state.loaded}>
+                                {map.map(i => {
+                                    return <Card>
+                                        <FadeIn>
+                                            <Movie id={this.state.movie[i].id}></Movie>
+                                        </FadeIn>
+                                    </Card>
+                                })}
+                            </Loader>
+                        </CardColumns>
+                    </FadeIn>
+                </div>
+                <Footer />
             </div>
         )
     }
-    }
+}
 
 export default Recommender
