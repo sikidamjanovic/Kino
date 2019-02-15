@@ -3,10 +3,10 @@ import Movie from '../components/Movie'
 import Footer from '../components/Footer'
 import { Container, Row, Col, CardColumns, Card} from 'react-bootstrap';
 import '../css/main.css';
-import {Link} from 'react-router'
 import logo from '../img/kino3.png'
 import FadeIn from 'react-fade-in';
 import '../css/search.css';
+
 var Loader = require('react-loader');
 var opts = {
     lines: 9, // The number of lines to draw
@@ -94,6 +94,7 @@ class Home extends Component{
         window.location.reload();
     }
 
+    
     render() {
         var errorMsg = ''
         var map = []

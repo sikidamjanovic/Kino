@@ -1,7 +1,7 @@
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-    .title{
-        font-size: 1.5em !important;
+    .title, .recommender-title{
+        font-size: 1.3em !important;
         width: 60% !important;
     }
     .card-columns{
@@ -10,8 +10,8 @@
 }
 
 @media only screen and (min-width: 600px) {
-    .title{
-        font-size: 1.8em !important;
+    .title, .recommender-title{
+        font-size: 1.5em !important;
     }
     .card-columns{
         column-count: 3;
@@ -21,7 +21,7 @@
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
     .title{
-        font-size: 2em !important;
+        font-size: 1.8em !important;
     }
     .card-columns{
         column-count: 3;

@@ -71,7 +71,6 @@
 
 .movie-full-image{    
     border-radius: 10px;
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.466);
     -webkit-animation: fadein 2s;
 }
 
