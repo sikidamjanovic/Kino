@@ -1,0 +1,87 @@
+.ReactModal__Overlay--after-open{
+    z-index: 10;
+    margin: 2.5vh;
+    border-radius: 20px !important;
+    background: rgb(18, 21, 24) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.ReactModal__Content--after-open{
+    border-radius: 20px !important;
+    padding: 0 !important;
+    height: 100%;
+    width: 100%;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    position: absolute;
+    background: rgb(18, 21, 24) !important;
+    border: none !important;
+}
+
+#button{
+    position: fixed;
+    margin: 1.5%;
+    background: none;
+    border: 3px solid #82f5a8;
+    border-radius: 5px;
+    color: #82f5a8;
+    font-weight: bold;
+    font-size: 20pt;
+    z-index: 100;
+}
+
+#bgImage{
+    border-radius: 20px 20px 0px 0px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: grayscale(70%) contrast(100%) brightness(15%) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+}
+
+#basicInfo{
+    position: fixed;
+    top: 2.5vh;
+    right: 2.5vw;
+    left: 2.5vw;
+    bottom: 2.5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    justify-content: center;
+}
+
+#basicInfo h1{
+    color: #82f5a8;
+    font-size: 80px;
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    font-weight: 800;
+}
+
+#basicInfo p{
+    color: #82f5a8;
+    font-size: 20px;
+    margin: 10%;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#basicInfo button{
+    margin: 10%;
+    font-size: 20px;
+    background: none;
+    color: #82f5a8;
+    padding: 10px 20px 10px 20px;
+    border: 3px solid #82f5a8;
+    border-radius: 20px;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#basicInfo div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}

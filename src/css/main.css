@@ -1,0 +1,118 @@
+#App{
+    background-color: rgb(27, 31, 39);
+    miheight: 100vh;
+}
+
+#header{
+    height: 15vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: rgb(27, 31, 39);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    right: 0; top: 0;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+#header h1{
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 16pt;
+    width: 60%;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+#header h1 span{
+    color: rgba(255, 255, 255, 0.555);
+    font-size: 16pt;
+}
+
+#header input{
+    margin-right: 10px;
+    background:none;
+    border: none;
+    border-bottom: 1px solid rgb(42, 48, 59);;
+    height: 60px;
+    padding: 10px;
+    width:400px;
+    color: rgba(130, 245, 168, 0.8);
+    font-family: 'PT Sans Narrow', sans-serif;
+    letter-spacing: 2px;
+    font-size: 14pt;
+}
+
+#header input:focus{
+    border-bottom: 3px solid;
+    outline-width: 0;
+}
+
+#header button{
+    background: none;
+    opacity: 0.8;
+    width: 60px;
+    color: rgba(130, 245, 168);
+    height: 60px;
+    border: none;
+}
+
+#header svg{
+    width: 50%;
+    height: 50%;
+}
+
+#header img{
+    width: 10%;
+    text-shadow: 0 15px 30px rgba(0, 0, 0, 0.9);
+}
+
+#middle-section{
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items:  center;
+}
+
+#sort-container{
+    width: 40%;
+    display: flex;
+    color: rgba(130, 245, 168);
+    justify-content: center;
+}
+
+#sort-container ul{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+#sort-container li{
+    color: rgba(218, 218, 218, 0.363);
+    font-family: 'PT Sans Narrow', sans-serif;
+    list-style-type: none;
+    font-size: 14pt;
+}
+
+#sort-container li:hover{
+    color: rgba(130, 245, 168);
+    cursor: pointer;
+}
+
+#selected{
+    color: rgba(130, 245, 168);
+    padding-bottom: 6px;
+    border-bottom: 2px solid #82f5a8;
+}
+
+.movie-feed-row{
+    margin-top: 20vh;
+}
+
+#no-movies-found{
+    display: flex;
+    align-items: center;
+}

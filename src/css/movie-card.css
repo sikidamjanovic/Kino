@@ -1,0 +1,147 @@
+#movie-card{
+    width: 100%;
+    margin-bottom: 10%;
+    margin-top: 10%;
+    transition: 2ms;
+    -webkit-animation: fadein 3s;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+#poster{
+    width: 100%;
+    border-radius: 20px;
+    filter: grayscale(30%) contrast(85%) brightness(120%) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+    transition: 0.9s;
+}
+
+#noImg{
+    width: 100%;
+    padding: 35%;
+}
+
+#poster:hover{
+    transform: scale(1.03);
+    filter: none;
+}
+
+#info{
+    display: flex;
+    flex-direction: row;
+}
+
+#poster-container{
+    -webkit-animation: fadein 1.5s;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#info-container{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#buttons-container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#line-container{
+    width: 10%;
+    display: flex;
+    align-items: center;
+}
+
+#title-container{
+    width: 90%;
+}
+
+#title{
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 16pt;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    margin-left: 5px;
+    color: rgb(255, 255, 255);
+}
+
+#line{
+    opacity: 0.8;
+    width: 25%;
+    border-radius: 90px;
+    height: 40%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    -webkit-animation: fadein 3s;
+}
+
+.rating{
+    text-align: center;
+    opacity: 0.5;
+    color: rgb(255, 208, 0);
+    font-size: 10pt;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 3px;
+    min-width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: text;
+}
+
+#star{
+    margin-right: 5px;
+}
+
+.year{
+    text-align: center;
+    opacity: 0.3;
+    color: rgb(255, 255, 255);
+    font-size: 10pt;
+    font-weight: bold;
+    margin-right: 5px;
+    padding: 3px;
+    min-width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: text;
+}
+
+.trailer{
+    text-align: center;
+    opacity: 0.3;
+    background-color: rgb(11, 16, 20);
+    color: rgb(255, 255, 255);;
+    font-size: 10pt;
+    font-weight: bold;
+    margin-right: 5px;
+    border: 1px solid rgb(255, 255, 255);
+    border-radius: 5px;
+    padding: 5px 10px 5px 5px;
+    min-width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.rating:hover, .trailer:hover, .year:hover{
+    opacity: 0.75;
+}
