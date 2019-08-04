@@ -15,7 +15,8 @@ class MovieCard extends Component {
     state = {
         data: [],
         loaded: false,
-        showModal: false
+        showModal: false,
+        sort: 'revelance'
     }
 
     componentDidMount(){
@@ -49,7 +50,7 @@ class MovieCard extends Component {
         var loaded = this.state.loaded
         if(loaded){
             var poster = this.state.data.poster_path
-            if(poster){
+            if(poster != null){
                 return (
                     <div id="poster-container">
                         <img 
