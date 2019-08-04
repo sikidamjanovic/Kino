@@ -126,7 +126,7 @@ class MovieCard extends Component {
         return (
                 <div id="movie-card" onClick={this.showModal}>
                     <div>
-                        <MovieModal isOpen={this.state.showModal} data={this.state.data}/>
+                        <MovieModal id="modal" isOpen={this.state.showModal} data={this.state.data}/>
                         {this.renderPoster()}
                         {this.renderInfo()}
                     </div>

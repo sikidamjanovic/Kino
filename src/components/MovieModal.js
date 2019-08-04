@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Modal from 'react-modal'
+import { IoIosStar, IoMdTime, IoIosPlay } from 'react-icons/io'
 import '../css/modal.css'
   
 Modal.setAppElement('#root')
@@ -34,9 +35,18 @@ class MovieModal extends Component {
                     <div id="basicInfo">
                         <h1>{this.props.data.title}</h1>
                         <div>
-                            <button>Trailer</button>
-                            <p>{this.props.data.vote_average}</p>
-                            <p>{this.props.data.runtime}min</p>
+                            <button>
+                                <IoIosPlay className="icon"/>
+                                Trailer
+                            </button>
+                            <p>
+                                <IoIosStar className="icon"/>
+                                {this.props.data.vote_average}
+                            </p>
+                            <p>
+                                <IoMdTime className="icon"/>
+                                {this.props.data.runtime}min
+                            </p>
                         </div>
                     </div>
                 </Modal>

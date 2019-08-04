@@ -145,3 +145,7 @@
 .rating:hover, .trailer:hover, .year:hover{
     opacity: 0.75;
 }
+
+#modal{
+    -webkit-animation: fadein 2s;
+}

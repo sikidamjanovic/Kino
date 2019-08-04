@@ -22,10 +22,12 @@
 
 #button{
     position: fixed;
-    margin: 1.5%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 2%;
     background: none;
     border: 3px solid #82f5a8;
-    border-radius: 5px;
+    border-radius: 10px;
     color: #82f5a8;
     font-weight: bold;
     font-size: 20pt;
@@ -37,7 +39,7 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    filter: grayscale(70%) contrast(100%) brightness(15%) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
+    filter: grayscale(80%) contrast(70%) brightness(20%) drop-shadow(0 15px 30px rgba(0, 0, 0, 0.6));
 }
 
 #basicInfo{
@@ -54,29 +56,39 @@
 }
 
 #basicInfo h1{
+    width: 60%;
     color: #82f5a8;
-    font-size: 80px;
+    font-size: 50pt;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     text-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     font-weight: 800;
+    margin-bottom: 5%;
 }
 
 #basicInfo p{
+    opacity: 0.6;
     color: #82f5a8;
-    font-size: 20px;
+    font-size: 24px;
     margin: 10%;
     font-family: 'PT Sans Narrow', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 #basicInfo button{
+    opacity: 0.6;
     margin: 10%;
-    font-size: 20px;
+    font-size: 24px;
     background: none;
     color: #82f5a8;
     padding: 10px 20px 10px 20px;
     border: 3px solid #82f5a8;
     border-radius: 20px;
     font-family: 'PT Sans Narrow', sans-serif;
+    display: flex;
+    align-items: center;
 }
 
 #basicInfo div{
@@ -84,4 +96,8 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.icon{
+    margin-right: 10px;
 }
