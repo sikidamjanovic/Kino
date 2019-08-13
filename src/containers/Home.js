@@ -16,7 +16,6 @@ class Home extends Component {
             loaded: false,
             error: false,
             input: '',
-            shadow: 'none',
             sort: 'revelance',
         }
         this.handleSubmit = this.handleSubmit.bind(this)
@@ -27,17 +26,8 @@ class Home extends Component {
         this.reset = this.reset.bind(this)
     }
 
-    listenScrollEvent = e => {
-        if (window.scrollY > 18) {
-          this.setState({shadow: '0px 15px 30px rgb(0,0,0,0.2)'})
-        } else {
-          this.setState({shadow: 'none'})
-        }
-    }
-
     componentDidMount() {
         this.fetchData()
-        window.addEventListener('scroll', this.listenScrollEvent)
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -132,39 +122,44 @@ class Home extends Component {
 
     renderHeader(){
         return(
-            <Row style={{ boxShadow: this.state.shadow }} id="header">
-                <Col lg={2} id="left-section-header">
-                    <img 
-                        src={kinoLogo} 
-                        alt="kino"
-                        onClick={this.reset}>
-                    </img>
-                </Col>
-                <Col lg={5} id="middle-section-header">
-                    <div>
+            <Container>
+                <Row id="header-row">
+                    <Col lg={4} id="left-section-header">
+                        <img 
+                            src={kinoLogo} 
+                            alt="kino"
+                            onClick={this.reset}>
+                        </img>
+                    </Col>
+                    <Col lg={4} id="middle-section-header">
                         <ul>
-                            <li style={this.sortStyle('relevance')} onClick={this.sortByRelevance}>Revelance</li>
+                            <li style={this.sortStyle('relevance')} onClick={this.sortByRelevance}>Relevance</li>
                             <li style={this.sortStyle('rating')} onClick={this.sortByRating}>Rating</li>
                             <li style={this.sortStyle('year')} onClick={this.sortByYear}>Year</li>
                         </ul>
-                    </div>
-                </Col>
-                <Col lg={5} id="right-section-header">
-                    <form onSubmit={this.handleSubmit}>
-                        <input 
-                            type="text"
-                            placeholder="Search movies"
-                            onChange={this.handleChange}
-                        />
-                        <button 
-                            type="submit" 
-                            id="search"
-                        >
-                            <FaSearch/>
-                        </button>
-                    </form>
-                </Col>
-            </Row>
+                    </Col>
+                    <Col lg={4} id="results-section-header">
+                        <p>Results for: 
+                            <span>dark</span>
+                        </p>
+                    </Col>
+                    <Col lg={12} id="right-section-header">
+                        <form onSubmit={this.handleSubmit}>
+                            <input 
+                                type="text"
+                                placeholder="Search movies"
+                                onChange={this.handleChange}
+                            />
+                            <button 
+                                type="submit" 
+                                id="search"
+                            >
+                                <FaSearch/>
+                            </button>
+                        </form>
+                    </Col>
+                </Row>
+            </Container>
         )
     }
 
@@ -197,8 +192,10 @@ class Home extends Component {
     render() {
         return (
             <div id="app">
-                <Container>
+                <div id="header">
                     {this.renderHeader()}
+                </div>
+                <Container>
                     {this.renderMovies()}
                 </Container>
             </div>

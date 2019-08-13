@@ -94,29 +94,27 @@ class MovieCard extends Component {
         if(loaded){
             return(
                 <div id="info">    
+                
                     <div id="line-container">
                         {this.renderLine()}
                     </div>
-                    <div id="info-container">
-                        <div id="title-container">
-                            <p id="title">{data.title}</p>
-                        </div>
-                        <div id="buttons-container">
 
-                            <p className="rating">
+                    <div id="info-container">
+
+                        <div id="title-container">
+                            <p id="title">
+                                {data.title} 
+                                <span>{data.release_date.substring(0, 4)}</span>
+                            </p>
+                        </div>
+
+                        <div id="buttons-container">
+                            <p id="rating">
                                 <MdStar id="star"/>
                                 {data.vote_average}
                             </p>
-
-                            <p className="year"> 
-                                {data.release_date.substring(0, 4)}
-                            </p>
-
-                            <p className="trailer">
-                                <MdPlayArrow/>
-                                TRAILER
-                            </p>
                         </div>
+
                     </div>
                 </div>
             )
