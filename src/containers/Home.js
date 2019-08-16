@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import MovieCard from '../components/MovieCard'
 import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
 import '../css/main.css'
 import kinoLogo from '../img/logo.png'
 
@@ -45,25 +44,36 @@ class Home extends Component {
 
     handleChange(e){
         console.log('changing')
-        this.setState({ input: e.target.value})
+        this.setState({ 
+            input: e.target.value
+        })
     }
 
     handleSubmit(e){
         console.log('submitted')
         e.preventDefault()
-        this.setState({ data: [], query: this.state.input })
+        this.setState({ 
+            data: [], 
+            query: this.state.input 
+        })
     }
 
     sortByRating(){
-        this.setState({ sort: 'rating' })
+        this.setState({ 
+            sort: 'rating' 
+        })
     }
 
     sortByRelevance(){
-        this.setState({ sort: 'relevance' })
+        this.setState({ 
+            sort: 'relevance' 
+        })
     }
 
     sortByYear(){
-        this.setState({ sort: 'year' })
+        this.setState({ 
+            sort: 'year' 
+        })
     }
 
     sortStyle(selected){
@@ -83,7 +93,9 @@ class Home extends Component {
                 if(a.vote_average < b.vote_average) return 1;
                 return 0
             })
-            this.setState({ data: data })
+            this.setState({ 
+                data: data 
+            })
         }
         else if(sort == 'year'){
             const data = [...this.state.data].sort((a,b) =>{
@@ -91,7 +103,9 @@ class Home extends Component {
                 if(a.release_date.substring(0, 4) < b.release_date.substring(0, 4)) return 1;
                 return 0
             })
-            this.setState({ data: data })
+            this.setState({ 
+                data: data 
+            })
         }
         else{
             this.fetchData()
@@ -108,13 +122,21 @@ class Home extends Component {
         })
         //Store data in state
         .then( json => {
-            this.setState({loaded:true, error:false, data: json.results, sort: 'relevance'}) 
+            this.setState({
+                loaded:true, 
+                error:false, 
+                data: json.results, 
+                sort: 'relevance'
+            }) 
         })
         //Catches API limit errors, reloads page until limit resets
         .catch( err => {
             if(err.status === '429'){
                 console.log('Error 429')
-                this.setState({error:true, loaded: false})
+                this.setState({
+                    error:true, 
+                    loaded: false
+                })
                 this.fetchData()
             }
         })
